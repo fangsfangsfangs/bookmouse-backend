@@ -13,6 +13,9 @@ const booksToReadPath = path.join(dataDir, "books-to-read.json");
 app.use(cors());
 app.use(express.json());
 
+// Serve JSON files as static from /data URL path
+app.use("/data", express.static(dataDir));
+
 // Helper to read JSON file safely
 async function readJSON(filePath) {
   try {
