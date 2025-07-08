@@ -1,5 +1,21 @@
-{
-  "read": [],
-  "toRead": []
-}
-
+[
+  {
+    "title": "Under The Skin",
+    "author": "Michel Faber",
+    "isbn": "1234567890",
+    "quote": "Some quote",
+    "review": "My review",
+    "rating": 4,
+    "despair": 2,
+    "favorite": "true",
+    "tags": "fantasy,classic",
+    "cover": ""
+  },
+  {
+    "title": "Another Book",
+    "author": "Another Author",
+    "isbn": "0987654321",
+    "notes": "Notes for to-read book",
+    "cover": ""
+  }
+]
