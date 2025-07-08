@@ -1,6 +1,6 @@
 [
   {
-    "title": "Butter: A Novel of Food and Murder",
+     "title": "Butter: A Novel of Food and Murder",
     "author": "Asako Yuzuki",
     "isbn": "",
     "quote": "",
@@ -11,16 +11,11 @@
     "tags": "mystery, horror",
     "cover": ""
   },
-   {   
-     "title": "Model Home",
-    "author": "Rivers Solomon",
-    "isbn": "",
-    "quote": "",
-    "review": "",
-    "rating": ,
-    "despair": ,
-    "favorite": "",
-    "tags": "horror",
+  {
+    "title": "Another Book",
+    "author": "Another Author",
+    "isbn": "0987654321",
+    "notes": "Notes for to-read book",
     "cover": ""
-  },
+  }
 ]
