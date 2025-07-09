@@ -1,18 +1,17 @@
 // bookmouse-backend/server.js
 const express = require("express");
+const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_PATH = path.join(__dirname, "data", "books-read.json");
 
+// Enable CORS with default settings (allows all origins)
+app.use(cors());
+
 app.use(express.json());
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
 
 // GET all books
 app.get("/books/read", (req, res) => {
@@ -29,7 +28,6 @@ app.post("/books/read", (req, res) => {
   res.status(201).json(newBook);
 });
 
-// PUT to replace an existing book (by title + author match)
 // PUT to update a book by title_author in the URL
 app.put("/books/read/:id", (req, res) => {
   const updatedBook = req.body;
