@@ -30,11 +30,17 @@ app.post("/books/read", (req, res) => {
 });
 
 // PUT to replace an existing book (by title + author match)
-app.put("/books/read", (req, res) => {
+// PUT to update a book by title_author in the URL
+app.put("/books/read/:id", (req, res) => {
   const updatedBook = req.body;
   const data = JSON.parse(fs.readFileSync(DATA_PATH, "utf8"));
+
+  const [rawTitle, rawAuthor] = req.params.id.split("_");
+  const title = decodeURIComponent(rawTitle);
+  const author = decodeURIComponent(rawAuthor);
+
   const index = data.findIndex(
-    (b) => b.title === updatedBook.title && b.author === updatedBook.author
+    (b) => b.title === title && b.author === author
   );
 
   if (index !== -1) {
